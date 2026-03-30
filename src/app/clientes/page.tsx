@@ -12,24 +12,214 @@ import 'swiper/css';
 
 const WHATSAPP_NUMBER = '5215510703056';
 
+interface ClientLogo {
+  name: string;
+  short: string;
+  tier?: 'platinum' | 'gold' | 'standard';
+}
+
 const clientCategories = {
   es: [
-    { title: 'Sector Salud — Hospitales', icon: Stethoscope, clients: ['Hospital Angeles Pedregal','Hospital Angeles Lindavista','Hospital Angeles Metropolitano','Hospital Angeles Acoxpa','Hospital Angeles México','Hospital Angeles Mocel','Hospital Angeles Universidad','Hospital San Ángel Inn','Grupo Angeles Servicios de Salud','ISSSTE','IMSS'] },
-    { title: 'Sociedades y Colegios Médicos', icon: Award, clients: ['Colegio Mexicano de Anestesiología','Sociedad Mexicana de Anestesiología','Sociedad Mexicana de Radiología e Imagen','Colegio Mexicano de Dermatología Pediátrica','Sociedad Mexicana de Cirugía Pediátrica','Sociedad Médica Hospital Angeles Pedregal','SOMHAL — Soc. Médica H. Angeles Lindavista','Sociedad Médica H. Angeles Metropolitano','Sociedad Médica H. Angeles Acoxpa','Asociación Psicoanalítica Mexicana A.C.','Sociedad Mexicana de Trasplantes A.C.','AMEG — Asoc. Mexicana de Endoscopia GI','CEDIASA — Centro Diagnóstico Ángeles','Centro Diagnóstico Ángeles','FEMECOG','Asociación Nacional de Hospitales Privados'] },
-    { title: 'Farmacéuticas y Dispositivos Médicos', icon: Pill, clients: ['Pfizer','Bayer','MSD','Baxter','Novo Nordisk','AstraZeneca','Astellas','PiSA Farmacéutica','Laboratorios Carnot','Laboratorios Silanes','Laboratorios Columbia','IFA Celtics','BioMédicos','Medartis','IBRA — International Bone Research Assoc.','Aceleración Nuclear y Resonancia Magnética'] },
-    { title: 'Corporativos y Marcas Globales', icon: Building2, clients: ['FEMSA','Garrigues','Groupe Clarins','Carlson Wagonlit Travel','Estée Lauder Companies','Trojan','Industrial Polaris','Medical Corporation Group','Grupo Martí','Sport City'] },
-    { title: 'Gobierno y Educación', icon: GraduationCap, clients: ['Presidencia de la República','Universidad Panamericana'] },
+    {
+      title: 'Sector Salud — Hospitales',
+      icon: Stethoscope,
+      clients: [
+        { name: 'Hospital Angeles Pedregal', short: 'HA', tier: 'platinum' as const },
+        { name: 'Hospital Angeles Lindavista', short: 'HA', tier: 'gold' as const },
+        { name: 'Hospital Angeles Metropolitano', short: 'HA', tier: 'gold' as const },
+        { name: 'Hospital Angeles Acoxpa', short: 'HA', tier: 'gold' as const },
+        { name: 'Hospital Angeles México', short: 'HA', tier: 'gold' as const },
+        { name: 'Hospital Angeles Mocel', short: 'HA', tier: 'standard' as const },
+        { name: 'Hospital Angeles Universidad', short: 'HA', tier: 'standard' as const },
+        { name: 'Hospital San Ángel Inn', short: 'SAI', tier: 'gold' as const },
+        { name: 'Grupo Angeles Servicios de Salud', short: 'GA', tier: 'platinum' as const },
+        { name: 'ISSSTE', short: 'ISSSTE', tier: 'platinum' as const },
+        { name: 'IMSS', short: 'IMSS', tier: 'platinum' as const },
+      ],
+    },
+    {
+      title: 'Sociedades y Colegios Médicos',
+      icon: Award,
+      clients: [
+        { name: 'Col. Mexicano de Anestesiología', short: 'CMA', tier: 'gold' as const },
+        { name: 'Soc. Mexicana de Anestesiología', short: 'SMA', tier: 'standard' as const },
+        { name: 'Soc. Mexicana de Radiología', short: 'SMR', tier: 'gold' as const },
+        { name: 'Col. Mex. Dermatología Pediátrica', short: 'CMDP', tier: 'gold' as const },
+        { name: 'Soc. Mex. Cirugía Pediátrica', short: 'SMCP', tier: 'standard' as const },
+        { name: 'Soc. Médica H.A. Pedregal', short: 'SMP', tier: 'standard' as const },
+        { name: 'SOMHAL', short: 'SOMHAL', tier: 'standard' as const },
+        { name: 'Soc. Médica H.A. Metropolitano', short: 'SMM', tier: 'standard' as const },
+        { name: 'Soc. Médica H.A. Acoxpa', short: 'SMHA', tier: 'standard' as const },
+        { name: 'Asoc. Psicoanalítica Mexicana', short: 'APM', tier: 'standard' as const },
+        { name: 'Soc. Mex. de Trasplantes', short: 'SMT', tier: 'gold' as const },
+        { name: 'AMEG', short: 'AMEG', tier: 'gold' as const },
+        { name: 'CEDIASA', short: 'CEDIASA', tier: 'standard' as const },
+        { name: 'Centro Diagnóstico Ángeles', short: 'CDA', tier: 'standard' as const },
+        { name: 'FEMECOG', short: 'FEMECOG', tier: 'gold' as const },
+        { name: 'Asoc. Nal. Hospitales Privados', short: 'ANHP', tier: 'platinum' as const },
+      ],
+    },
+    {
+      title: 'Farmacéuticas y Dispositivos Médicos',
+      icon: Pill,
+      clients: [
+        { name: 'Pfizer', short: 'Pfizer', tier: 'platinum' as const },
+        { name: 'Bayer', short: 'BAYER', tier: 'platinum' as const },
+        { name: 'MSD', short: 'MSD', tier: 'platinum' as const },
+        { name: 'Baxter', short: 'Baxter', tier: 'platinum' as const },
+        { name: 'Novo Nordisk', short: 'NN', tier: 'platinum' as const },
+        { name: 'AstraZeneca', short: 'AZ', tier: 'platinum' as const },
+        { name: 'Astellas', short: 'Astellas', tier: 'gold' as const },
+        { name: 'PiSA Farmacéutica', short: 'PiSA', tier: 'gold' as const },
+        { name: 'Laboratorios Carnot', short: 'CARNOT', tier: 'gold' as const },
+        { name: 'Laboratorios Silanes', short: 'Silanes', tier: 'gold' as const },
+        { name: 'Laboratorios Columbia', short: 'Columbia', tier: 'standard' as const },
+        { name: 'IFA Celtics', short: 'IFA', tier: 'standard' as const },
+        { name: 'BioMédicos', short: 'BioMed', tier: 'standard' as const },
+        { name: 'Medartis', short: 'Medartis', tier: 'gold' as const },
+        { name: 'IBRA', short: 'IBRA', tier: 'standard' as const },
+      ],
+    },
+    {
+      title: 'Corporativos y Marcas Globales',
+      icon: Building2,
+      clients: [
+        { name: 'FEMSA', short: 'FEMSA', tier: 'platinum' as const },
+        { name: 'Garrigues', short: 'G', tier: 'gold' as const },
+        { name: 'Groupe Clarins', short: 'CLARINS', tier: 'gold' as const },
+        { name: 'Carlson Wagonlit Travel', short: 'CWT', tier: 'standard' as const },
+        { name: 'Estée Lauder Companies', short: 'EL', tier: 'platinum' as const },
+        { name: 'Industrial Polaris', short: 'POLARIS', tier: 'standard' as const },
+        { name: 'Medical Corp. Group', short: 'MCG', tier: 'standard' as const },
+        { name: 'Grupo Martí', short: 'Martí', tier: 'gold' as const },
+        { name: 'Sport City', short: 'SC', tier: 'gold' as const },
+      ],
+    },
+    {
+      title: 'Gobierno y Educación',
+      icon: GraduationCap,
+      clients: [
+        { name: 'Presidencia de la República', short: 'GOB', tier: 'platinum' as const },
+        { name: 'Universidad Panamericana', short: 'UP', tier: 'gold' as const },
+      ],
+    },
   ],
   en: [
-    { title: 'Healthcare — Hospitals', icon: Stethoscope, clients: ['Hospital Angeles Pedregal','Hospital Angeles Lindavista','Hospital Angeles Metropolitano','Hospital Angeles Acoxpa','Hospital Angeles México','Hospital Angeles Mocel','Hospital Angeles Universidad','Hospital San Ángel Inn','Grupo Angeles Health Services','ISSSTE','IMSS'] },
-    { title: 'Medical Societies & Colleges', icon: Award, clients: ['Mexican College of Anesthesiology','Mexican Society of Anesthesiology','Mexican Society of Radiology & Imaging','Mexican College of Pediatric Dermatology','Mexican Society of Pediatric Surgery','H. Angeles Pedregal Medical Society','SOMHAL — H. Angeles Lindavista Medical Society','H. Angeles Metropolitano Medical Society','H. Angeles Acoxpa Medical Society','Mexican Psychoanalytic Association','Mexican Society of Transplants','AMEG — Mexican Assoc. of GI Endoscopy','CEDIASA — Angeles Diagnostic Center','Angeles Diagnostic Center','FEMECOG','National Assoc. of Private Hospitals'] },
-    { title: 'Pharmaceuticals & Medical Devices', icon: Pill, clients: ['Pfizer','Bayer','MSD','Baxter','Novo Nordisk','AstraZeneca','Astellas','PiSA Pharmaceuticals','Carnot Laboratories','Silanes Laboratories','Columbia Laboratories','IFA Celtics','BioMédicos','Medartis','IBRA — International Bone Research Assoc.','Nuclear Acceleration & Magnetic Resonance'] },
-    { title: 'Corporate & Global Brands', icon: Building2, clients: ['FEMSA','Garrigues','Groupe Clarins','Carlson Wagonlit Travel','Estée Lauder Companies','Trojan','Industrial Polaris','Medical Corporation Group','Grupo Martí','Sport City'] },
-    { title: 'Government & Education', icon: GraduationCap, clients: ['Presidency of Mexico','Universidad Panamericana'] },
+    {
+      title: 'Healthcare — Hospitals',
+      icon: Stethoscope,
+      clients: [
+        { name: 'Hospital Angeles Pedregal', short: 'HA', tier: 'platinum' as const },
+        { name: 'Hospital Angeles Lindavista', short: 'HA', tier: 'gold' as const },
+        { name: 'Hospital Angeles Metropolitano', short: 'HA', tier: 'gold' as const },
+        { name: 'Hospital Angeles Acoxpa', short: 'HA', tier: 'gold' as const },
+        { name: 'Hospital Angeles México', short: 'HA', tier: 'gold' as const },
+        { name: 'Hospital Angeles Mocel', short: 'HA', tier: 'standard' as const },
+        { name: 'Hospital Angeles Universidad', short: 'HA', tier: 'standard' as const },
+        { name: 'Hospital San Ángel Inn', short: 'SAI', tier: 'gold' as const },
+        { name: 'Grupo Angeles Health Services', short: 'GA', tier: 'platinum' as const },
+        { name: 'ISSSTE', short: 'ISSSTE', tier: 'platinum' as const },
+        { name: 'IMSS', short: 'IMSS', tier: 'platinum' as const },
+      ],
+    },
+    {
+      title: 'Medical Societies & Colleges',
+      icon: Award,
+      clients: [
+        { name: 'Mexican College of Anesthesiology', short: 'CMA', tier: 'gold' as const },
+        { name: 'Mexican Society of Anesthesiology', short: 'SMA', tier: 'standard' as const },
+        { name: 'Mexican Society of Radiology', short: 'SMR', tier: 'gold' as const },
+        { name: 'Col. of Pediatric Dermatology', short: 'CMDP', tier: 'gold' as const },
+        { name: 'Soc. of Pediatric Surgery', short: 'SMCP', tier: 'standard' as const },
+        { name: 'H.A. Pedregal Medical Society', short: 'SMP', tier: 'standard' as const },
+        { name: 'SOMHAL', short: 'SOMHAL', tier: 'standard' as const },
+        { name: 'H.A. Metropolitano Med. Society', short: 'SMM', tier: 'standard' as const },
+        { name: 'H.A. Acoxpa Medical Society', short: 'SMHA', tier: 'standard' as const },
+        { name: 'Mexican Psychoanalytic Assoc.', short: 'APM', tier: 'standard' as const },
+        { name: 'Mexican Society of Transplants', short: 'SMT', tier: 'gold' as const },
+        { name: 'AMEG', short: 'AMEG', tier: 'gold' as const },
+        { name: 'CEDIASA', short: 'CEDIASA', tier: 'standard' as const },
+        { name: 'Angeles Diagnostic Center', short: 'CDA', tier: 'standard' as const },
+        { name: 'FEMECOG', short: 'FEMECOG', tier: 'gold' as const },
+        { name: 'Natl. Assoc. Private Hospitals', short: 'ANHP', tier: 'platinum' as const },
+      ],
+    },
+    {
+      title: 'Pharmaceuticals & Medical Devices',
+      icon: Pill,
+      clients: [
+        { name: 'Pfizer', short: 'Pfizer', tier: 'platinum' as const },
+        { name: 'Bayer', short: 'BAYER', tier: 'platinum' as const },
+        { name: 'MSD', short: 'MSD', tier: 'platinum' as const },
+        { name: 'Baxter', short: 'Baxter', tier: 'platinum' as const },
+        { name: 'Novo Nordisk', short: 'NN', tier: 'platinum' as const },
+        { name: 'AstraZeneca', short: 'AZ', tier: 'platinum' as const },
+        { name: 'Astellas', short: 'Astellas', tier: 'gold' as const },
+        { name: 'PiSA Pharmaceuticals', short: 'PiSA', tier: 'gold' as const },
+        { name: 'Carnot Laboratories', short: 'CARNOT', tier: 'gold' as const },
+        { name: 'Silanes Laboratories', short: 'Silanes', tier: 'gold' as const },
+        { name: 'Columbia Laboratories', short: 'Columbia', tier: 'standard' as const },
+        { name: 'IFA Celtics', short: 'IFA', tier: 'standard' as const },
+        { name: 'BioMédicos', short: 'BioMed', tier: 'standard' as const },
+        { name: 'Medartis', short: 'Medartis', tier: 'gold' as const },
+        { name: 'IBRA', short: 'IBRA', tier: 'standard' as const },
+      ],
+    },
+    {
+      title: 'Corporate & Global Brands',
+      icon: Building2,
+      clients: [
+        { name: 'FEMSA', short: 'FEMSA', tier: 'platinum' as const },
+        { name: 'Garrigues', short: 'G', tier: 'gold' as const },
+        { name: 'Groupe Clarins', short: 'CLARINS', tier: 'gold' as const },
+        { name: 'Carlson Wagonlit Travel', short: 'CWT', tier: 'standard' as const },
+        { name: 'Estée Lauder Companies', short: 'EL', tier: 'platinum' as const },
+        { name: 'Industrial Polaris', short: 'POLARIS', tier: 'standard' as const },
+        { name: 'Medical Corp. Group', short: 'MCG', tier: 'standard' as const },
+        { name: 'Grupo Martí', short: 'Martí', tier: 'gold' as const },
+        { name: 'Sport City', short: 'SC', tier: 'gold' as const },
+      ],
+    },
+    {
+      title: 'Government & Education',
+      icon: GraduationCap,
+      clients: [
+        { name: 'Presidency of Mexico', short: 'GOB', tier: 'platinum' as const },
+        { name: 'Universidad Panamericana', short: 'UP', tier: 'gold' as const },
+      ],
+    },
   ],
 };
 
-const allClients = ['ISSSTE','IMSS','Hospital Angeles','Grupo Angeles','San Ángel Inn','Pfizer','Bayer','MSD','Baxter','Novo Nordisk','AstraZeneca','Astellas','FEMSA','Garrigues','Estée Lauder','PiSA','Carnot','Silanes','Columbia','Clarins','Medartis','IBRA','Sport City','Grupo Martí','Presidencia MX','Universidad Panamericana','IFA Celtics','BioMédicos','Polaris','Trojan'];
+function LogoCard({ client }: { client: ClientLogo }) {
+  const tierStyles = {
+    platinum: 'border-gold/30 bg-gradient-to-br from-gold/10 to-gold/[0.03] hover:border-gold/50 hover:from-gold/15',
+    gold: 'border-gold/15 bg-gold/[0.04] hover:border-gold/35 hover:bg-gold/[0.08]',
+    standard: 'border-white/10 bg-white/[0.03] hover:border-gold/25 hover:bg-gold/[0.06]',
+  };
+  const textSizes = {
+    platinum: 'text-xl md:text-2xl',
+    gold: 'text-lg md:text-xl',
+    standard: 'text-base md:text-lg',
+  };
+
+  return (
+    <motion.div
+      className={`relative rounded-2xl border p-5 md:p-6 flex flex-col items-center justify-center text-center h-[130px] md:h-[150px] transition-all duration-500 group cursor-default ${tierStyles[client.tier || 'standard']}`}
+      whileHover={{ scale: 1.05, y: -4 }}
+    >
+      <div className={`font-bold tracking-widest text-gold/50 group-hover:text-gold transition-all duration-500 ${textSizes[client.tier || 'standard']}`}>
+        {client.short}
+      </div>
+      <div className="text-[10px] md:text-xs text-white/40 group-hover:text-white/70 mt-2 font-medium tracking-wide uppercase transition-colors duration-500 line-clamp-2 leading-tight px-1">
+        {client.name}
+      </div>
+      {client.tier === 'platinum' && (
+        <div className="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-gold/50 group-hover:bg-gold transition-colors" />
+      )}
+    </motion.div>
+  );
+}
 
 const testimonials = {
   es: [
@@ -49,6 +239,9 @@ export default function ClientesPage() {
   const categories = clientCategories[locale];
   const testi = testimonials[locale];
 
+  // Featured clients for the top marquee
+  const featured = ['Pfizer', 'Bayer', 'MSD', 'IMSS', 'ISSSTE', 'Hospital Angeles', 'Novo Nordisk', 'AstraZeneca', 'Baxter', 'FEMSA', 'Estée Lauder', 'Astellas', 'PiSA', 'Carnot', 'Silanes', 'Medartis', 'Clarins', 'Sport City', 'Grupo Martí', 'Presidencia MX'];
+
   return (
     <>
       <PageHero
@@ -58,56 +251,60 @@ export default function ClientesPage() {
         metrics={[locale === 'es' ? '55+ Clientes' : '55+ Clients', locale === 'es' ? 'Farmacéuticas Globales' : 'Global Pharma', locale === 'es' ? 'Gobierno Federal' : 'Federal Government']}
       />
 
-      {/* Infinite Scroll Client Names */}
-      <section className="relative py-10 overflow-hidden border-y border-white/[0.04]">
+      {/* Infinite Marquee */}
+      <section className="relative py-8 overflow-hidden border-y border-white/[0.04]">
         <div className="absolute inset-0 bg-gradient-to-r from-[#0e0d08] via-[#09090b] to-[#0e0d08]" />
         <div className="relative">
-          <Swiper modules={[Autoplay]} slidesPerView="auto" spaceBetween={40} autoplay={{ delay: 0, disableOnInteraction: false }} speed={3000} loop allowTouchMove={false}>
-            {[...allClients, ...allClients].map((name, i) => (
+          <Swiper modules={[Autoplay]} slidesPerView="auto" spaceBetween={50} autoplay={{ delay: 0, disableOnInteraction: false }} speed={4000} loop allowTouchMove={false}>
+            {[...featured, ...featured].map((name, i) => (
               <SwiperSlide key={i} className="!w-auto">
-                <div className="flex items-center gap-3 px-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-gold/40" />
-                  <span className="text-white/30 text-sm font-medium whitespace-nowrap tracking-wide">{name}</span>
-                </div>
+                <span className="text-white/15 text-lg font-bold tracking-[0.2em] uppercase whitespace-nowrap">{name}</span>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
       </section>
 
-      {/* Client Categories */}
+      {/* Client Categories with Logo Cards */}
       <section className="relative py-24">
         <div className="absolute inset-0 noise-overlay" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle title={locale === 'es' ? 'Nuestros' : 'Our'} highlight={locale === 'es' ? 'Clientes' : 'Clients'} subtitle={locale === 'es' ? '+55 organizaciones confían en ADESSO para sus eventos más importantes' : '+55 organizations trust ADESSO for their most important events'} />
+          <SectionTitle
+            title={locale === 'es' ? 'Nuestros' : 'Our'}
+            highlight={locale === 'es' ? 'Clientes' : 'Clients'}
+            subtitle={locale === 'es' ? '+55 organizaciones confían en ADESSO para sus eventos más importantes' : '+55 organizations trust ADESSO for their most important events'}
+          />
 
-          <div className="space-y-8">
-            {categories.map((category, i) => (
-              <FadeInUp key={i} delay={i * 0.1}>
-                <div className="glass rounded-2xl p-6 md:p-8 card-hover border border-white/[0.04] hover:border-gold/15 transition-all">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/15 to-gold/5 flex items-center justify-center">
-                      <category.icon className="w-6 h-6 text-gold" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-white">{category.title}</h3>
-                      <p className="text-gold/50 text-xs">{category.clients.length} {locale === 'es' ? 'clientes' : 'clients'}</p>
-                    </div>
-                  </div>
-
-                  <Swiper modules={[Autoplay]} slidesPerView="auto" spaceBetween={8} autoplay={{ delay: 2500 + i * 500, disableOnInteraction: false, pauseOnMouseEnter: true }} speed={800} loop={category.clients.length > 4}>
-                    {category.clients.map((client, j) => (
-                      <SwiperSlide key={j} className="!w-auto">
-                        <motion.div className="px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-gold/20 hover:bg-gold/[0.04] text-white/60 hover:text-white text-sm font-medium whitespace-nowrap transition-all duration-300 cursor-default" whileHover={{ scale: 1.05, y: -2 }}>
-                          {client}
-                        </motion.div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+          {categories.map((category, i) => (
+            <FadeInUp key={i} delay={i * 0.08} className="mb-16">
+              {/* Category Header */}
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gold/15 to-gold/5 flex items-center justify-center">
+                  <category.icon className="w-5 h-5 text-gold" />
                 </div>
-              </FadeInUp>
-            ))}
-          </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                  <p className="text-gold/40 text-xs mt-0.5">{category.clients.length} {locale === 'es' ? 'clientes' : 'clients'}</p>
+                </div>
+                <div className="flex-1 h-px bg-gradient-to-r from-gold/10 to-transparent ml-4" />
+              </div>
+
+              {/* Logo Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4">
+                {category.clients.map((client, j) => (
+                  <motion.div
+                    key={j}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: j * 0.03 }}
+                  >
+                    <LogoCard client={client} />
+                  </motion.div>
+                ))}
+              </div>
+            </FadeInUp>
+          ))}
         </div>
       </section>
 
