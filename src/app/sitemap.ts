@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { blogPosts } from '@/lib/blog-data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://adesso-eventos.vercel.app';
+  const baseUrl = 'https://www.adessoeventos.com';
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },

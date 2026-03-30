@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://adesso-eventos.vercel.app'),
+  metadataBase: new URL('https://www.adessoeventos.com'),
   title: {
     default: "ADESSO Eventos | Producción de Congresos Médicos y Eventos Corporativos en México",
     template: "%s | ADESSO Eventos",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     images: ["/images/gala-led-screens.webp"],
   },
   alternates: {
-    canonical: "https://adesso-eventos.vercel.app",
+    canonical: "https://www.adessoeventos.com",
   },
   category: "Events & Production",
 };
@@ -80,7 +80,7 @@ const jsonLd = {
   name: "ADESSO Producciones y Banquetes",
   alternateName: "ADESSO Eventos",
   description: "Empresa líder en producción de congresos médicos, convenciones corporativas y eventos empresariales en México con más de 35 años de experiencia.",
-  url: "https://adesso-eventos.vercel.app",
+  url: "https://www.adessoeventos.com",
   telephone: ["+525555248542", "+525555249680", "+525510703056"],
   email: "asoto@adessomexico.com",
   address: {
