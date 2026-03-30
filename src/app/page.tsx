@@ -8,6 +8,8 @@ import StatsSection from '@/components/home/StatsSection';
 import CoverageSection from '@/components/home/CoverageSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
+import ImageShowcase from '@/components/home/ImageShowcase';
+import ParallaxBanner from '@/components/home/ParallaxBanner';
 
 export default function Home() {
   return (
@@ -15,7 +17,9 @@ export default function Home() {
       <HeroSection />
       <StatsSection />
       <WhyUsSection />
+      <ImageShowcase />
       <ServicesPreview />
+      <ParallaxBanner />
       <TechSection />
       <CoverageSection />
       <TestimonialsSection />

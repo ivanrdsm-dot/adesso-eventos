@@ -7,9 +7,25 @@ import { StaggerContainer, StaggerItem, FadeInUp } from '@/components/AnimatedSe
 import CounterAnimation from '@/components/CounterAnimation';
 import { motion } from 'framer-motion';
 import { ArrowRight, Stethoscope, Monitor, Fingerprint, Languages, LayoutGrid, Video, Users, ClipboardList } from 'lucide-react';
+import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const WHATSAPP_NUMBER = '5215510703056';
 const icons = [Stethoscope, Monitor, Fingerprint, Languages, LayoutGrid, Video, Users, ClipboardList];
+
+const congressImages = [
+  { src: '/images/congreso-audience-full.jpg', label: 'Congreso con +500 asistentes' },
+  { src: '/images/congreso-dermatologia-stage.jpg', label: 'Escenario Dermatología' },
+  { src: '/images/stage-led-pediatric.jpg', label: 'Pediatría - Triple LED' },
+  { src: '/images/congreso-angeles-screen.jpg', label: 'Congreso Ángeles' },
+  { src: '/images/expo-hall-stands.jpg', label: 'Expo Médica' },
+  { src: '/images/congreso-audience-breakfast.jpg', label: 'Congreso con Desayuno' },
+  { src: '/images/stand-fotofinder.jpg', label: 'Stand FotoFinder' },
+  { src: '/images/conference-room-blue.jpg', label: 'Conferencia Ejecutiva' },
+];
 
 export default function CongresosMedicosPage() {
   const { locale, t } = useLocale();
@@ -34,6 +50,47 @@ export default function CongresosMedicosPage() {
           <CounterAnimation end={35} suffix="+" label={locale === 'es' ? 'Años de Experiencia' : 'Years of Experience'} />
           <CounterAnimation end={50} suffix="+" label={locale === 'es' ? 'Especialidades' : 'Specialties'} />
           <CounterAnimation end={100} suffix="%" label={locale === 'es' ? 'Satisfacción' : 'Satisfaction'} />
+        </div>
+      </section>
+
+      {/* Image Carousel */}
+      <section className="relative py-16 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4">
+          <Swiper
+            modules={[Autoplay, Navigation]}
+            slidesPerView={1}
+            spaceBetween={16}
+            navigation
+            autoplay={{ delay: 3500, disableOnInteraction: false }}
+            loop
+            speed={800}
+            breakpoints={{
+              640: { slidesPerView: 1.5 },
+              1024: { slidesPerView: 2.5 },
+              1280: { slidesPerView: 3 },
+            }}
+            className="!pb-12"
+          >
+            {congressImages.map((img, i) => (
+              <SwiperSlide key={i}>
+                <div className="relative h-[280px] md:h-[320px] rounded-2xl overflow-hidden group">
+                  <Image
+                    src={img.src}
+                    alt={img.label}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <span className="px-3 py-1.5 rounded-full bg-gold/20 backdrop-blur-md text-gold text-sm font-medium border border-gold/20">
+                      {img.label}
+                    </span>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 

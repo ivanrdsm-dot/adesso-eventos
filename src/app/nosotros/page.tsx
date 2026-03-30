@@ -7,6 +7,10 @@ import { FadeInUp, FadeInLeft, FadeInRight, StaggerContainer, StaggerItem } from
 import CounterAnimation from '@/components/CounterAnimation';
 import { motion } from 'framer-motion';
 import { Target, Eye, Lightbulb, Award, Shield, Cpu, Heart, Handshake, CheckCircle, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
 const WHATSAPP_NUMBER = '5215510703056';
 const valueIcons = [Lightbulb, Award, Shield, Target, Cpu, Handshake, Heart, CheckCircle];
@@ -153,6 +157,44 @@ export default function NosotrosPage() {
             })}
           </StaggerContainer>
         </div>
+      </section>
+
+      {/* Image Strip */}
+      <section className="relative py-16 bg-dark-surface overflow-hidden">
+        <Swiper
+          modules={[Autoplay]}
+          slidesPerView={2}
+          spaceBetween={8}
+          autoplay={{ delay: 0, disableOnInteraction: false }}
+          speed={4000}
+          loop
+          allowTouchMove={false}
+          breakpoints={{
+            640: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+            1280: { slidesPerView: 5 },
+          }}
+        >
+          {[
+            '/images/gala-led-screens.jpg',
+            '/images/congreso-audience-full.jpg',
+            '/images/banquet-gala-gold.jpg',
+            '/images/expo-hall-stands.jpg',
+            '/images/gala-show-lights.jpg',
+            '/images/venue-night-pool.jpg',
+            '/images/catering-canapes.jpg',
+            '/images/stage-led-pediatric.jpg',
+            '/images/congreso-dermatologia-stage.jpg',
+            '/images/evento-outdoor-people.jpg',
+          ].map((src, i) => (
+            <SwiperSlide key={i}>
+              <div className="relative h-[200px] rounded-xl overflow-hidden">
+                <Image src={src} alt={`ADESSO evento ${i + 1}`} fill className="object-cover" sizes="20vw" />
+                <div className="absolute inset-0 bg-black/20" />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
 
       {/* CTA */}

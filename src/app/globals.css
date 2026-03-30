@@ -137,6 +137,31 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* Swiper custom styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #C8A45D !important;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 1;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px !important;
+}
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.3) !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #C8A45D !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+}
+
 /* Noise texture overlay */
 .noise-overlay::before {
   content: '';
