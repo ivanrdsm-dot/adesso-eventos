@@ -86,7 +86,7 @@ export default function Navbar() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-dark to-gold text-black font-semibold text-sm hover:shadow-lg hover:shadow-gold/25 transition-all duration-300 hover:scale-105"
+              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-semibold text-sm hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 hover:scale-105 animate-shimmer"
             >
               {t.nav.cta}
             </a>

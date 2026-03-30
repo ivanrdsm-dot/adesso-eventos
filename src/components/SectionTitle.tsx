@@ -17,9 +17,9 @@ export default function SectionTitle({ title, highlight, subtitle, centered = tr
         <span className="text-gradient-gold">{highlight}</span>
       </h2>
       {subtitle && (
-        <p className="text-white/50 text-lg max-w-2xl mx-auto">{subtitle}</p>
+        <p className="text-white/55 text-lg max-w-2xl mx-auto">{subtitle}</p>
       )}
-      <div className="line-gold w-24 mx-auto mt-6" />
+      <div className="line-gold w-28 mx-auto mt-6" />
     </FadeInUp>
   );
 }
