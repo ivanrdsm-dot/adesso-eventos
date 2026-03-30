@@ -10,16 +10,15 @@ export default function TechSection() {
   const { t } = useLocale();
 
   const techs = [
-    { icon: Fingerprint, ...t.tech.rfid, gradient: 'from-gold/20 via-gold/10 to-transparent', iconBg: 'from-gold to-gold-dark', borderColor: 'hover:border-gold/40', accentColor: 'bg-gold' },
-    { icon: Bot, ...t.tech.robots, gradient: 'from-teal/15 via-teal/8 to-transparent', iconBg: 'from-teal to-teal-dark', borderColor: 'hover:border-teal/40', accentColor: 'bg-teal' },
-    { icon: Video, ...t.tech.streaming, gradient: 'from-accent-blue/15 via-accent-blue/8 to-transparent', iconBg: 'from-accent-blue to-blue-700', borderColor: 'hover:border-accent-blue/40', accentColor: 'bg-accent-blue' },
+    { icon: Fingerprint, ...t.tech.rfid },
+    { icon: Bot, ...t.tech.robots },
+    { icon: Video, ...t.tech.streaming },
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden section-teal">
+    <section className="relative py-24 overflow-hidden section-gold">
       <div className="absolute inset-0 noise-overlay" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-teal/5 blur-[150px]" />
-      <div className="absolute top-0 left-0 w-72 h-72 rounded-full bg-gold/5 blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-gold/[0.02] blur-[150px]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title={t.tech.title} highlight={t.tech.titleHighlight} subtitle={t.tech.subtitle} />
@@ -30,26 +29,22 @@ export default function TechSection() {
             return (
               <Wrapper key={i} delay={i * 0.15}>
                 <motion.div
-                  className={`glass rounded-2xl p-8 h-full card-hover group relative overflow-hidden border border-white/5 ${tech.borderColor} transition-all`}
+                  className="glass rounded-2xl p-8 h-full card-hover group relative overflow-hidden border border-white/[0.04] hover:border-gold/15 transition-all"
                   whileHover={{ scale: 1.03 }}
                 >
-                  {/* Colored top accent */}
-                  <div className={`absolute top-0 left-0 right-0 h-1 ${tech.accentColor} opacity-40 group-hover:opacity-80 transition-opacity`} />
-                  {/* Background tint on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${tech.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`} />
+                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
                   <div className="relative">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${tech.iconBg} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:animate-float transition-transform`}>
-                      <tech.icon className="w-8 h-8 text-white" />
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold/15 to-gold/5 flex items-center justify-center mb-6 group-hover:from-gold/25 group-hover:to-gold/10 transition-all duration-500">
+                      <tech.icon className="w-8 h-8 text-gold" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4">{tech.title}</h3>
-                    <p className="text-white/55 leading-relaxed">{tech.desc}</p>
+                    <p className="text-white/45 leading-relaxed">{tech.desc}</p>
                   </div>
 
-                  {/* Decorative dots */}
-                  <div className="absolute top-4 right-4 grid grid-cols-3 gap-1 opacity-15 group-hover:opacity-30 transition-opacity">
+                  <div className="absolute top-4 right-4 grid grid-cols-3 gap-1 opacity-[0.06] group-hover:opacity-[0.12] transition-opacity">
                     {Array.from({ length: 9 }).map((_, j) => (
-                      <div key={j} className={`w-1 h-1 rounded-full ${tech.accentColor}`} />
+                      <div key={j} className="w-1 h-1 rounded-full bg-gold" />
                     ))}
                   </div>
                 </motion.div>

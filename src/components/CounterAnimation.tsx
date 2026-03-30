@@ -32,18 +32,16 @@ export default function CounterAnimation({ end, suffix = '', prefix = '', durati
   return (
     <motion.div
       ref={ref}
-      className="text-center group"
+      className="text-center"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div className="text-4xl md:text-5xl font-bold text-gradient-vibrant counter-number drop-shadow-lg">
+      <div className="text-4xl md:text-5xl font-bold text-gradient-gold counter-number">
         {prefix}{count.toLocaleString()}{suffix}
       </div>
-      <div className="text-white/60 text-sm mt-2 uppercase tracking-wider font-medium">{label}</div>
-      {/* Decorative line under */}
-      <div className="w-12 h-0.5 mx-auto mt-3 rounded-full bg-gradient-to-r from-gold to-teal opacity-40 group-hover:opacity-100 transition-opacity" />
+      <div className="text-white/40 text-sm mt-2 uppercase tracking-[0.15em] font-light">{label}</div>
     </motion.div>
   );
 }

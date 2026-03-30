@@ -6,25 +6,11 @@ import { StaggerContainer, StaggerItem } from '../AnimatedSection';
 import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
-const cityColors = [
-  'border-gold/30 hover:bg-gold/10 hover:border-gold/50',
-  'border-teal/30 hover:bg-teal/10 hover:border-teal/50',
-  'border-accent-blue/30 hover:bg-accent-blue/10 hover:border-accent-blue/50',
-  'border-gold/30 hover:bg-gold/10 hover:border-gold/50',
-  'border-teal/30 hover:bg-teal/10 hover:border-teal/50',
-  'border-accent-blue/30 hover:bg-accent-blue/10 hover:border-accent-blue/50',
-  'border-gold/30 hover:bg-gold/10 hover:border-gold/50',
-  'border-teal/30 hover:bg-teal/10 hover:border-teal/50',
-  'border-accent-blue/30 hover:bg-accent-blue/10 hover:border-accent-blue/50',
-];
-
-const pinColors = ['text-gold', 'text-teal', 'text-accent-blue', 'text-gold', 'text-teal', 'text-accent-blue', 'text-gold', 'text-teal', 'text-accent-blue'];
-
 export default function CoverageSection() {
   const { t } = useLocale();
 
   return (
-    <section className="relative py-24 overflow-hidden section-gold">
+    <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 noise-overlay" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,11 +20,11 @@ export default function CoverageSection() {
           {t.coverage.cities.map((city, i) => (
             <StaggerItem key={i}>
               <motion.div
-                className={`rounded-full px-6 py-3 flex items-center gap-2 cursor-default bg-white/[0.03] border ${cityColors[i]} transition-all duration-300`}
-                whileHover={{ scale: 1.08, y: -4 }}
+                className="rounded-full px-6 py-3 flex items-center gap-2 cursor-default bg-white/[0.02] border border-white/[0.06] hover:border-gold/20 hover:bg-gold/[0.04] transition-all duration-400"
+                whileHover={{ scale: 1.06, y: -3 }}
               >
-                <MapPin className={`w-4 h-4 ${pinColors[i]}`} />
-                <span className="text-white/80 font-medium">{city}</span>
+                <MapPin className="w-4 h-4 text-gold/60" />
+                <span className="text-white/70 font-medium text-sm">{city}</span>
               </motion.div>
             </StaggerItem>
           ))}
