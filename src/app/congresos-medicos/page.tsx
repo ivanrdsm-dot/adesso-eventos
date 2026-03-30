@@ -17,14 +17,14 @@ const WHATSAPP_NUMBER = '5215510703056';
 const icons = [Stethoscope, Monitor, Fingerprint, Languages, LayoutGrid, Video, Users, ClipboardList];
 
 const congressImages = [
-  { src: '/images/congreso-audience-full.jpg', label: 'Congreso con +500 asistentes' },
-  { src: '/images/congreso-dermatologia-stage.jpg', label: 'Escenario Dermatología' },
-  { src: '/images/stage-led-pediatric.jpg', label: 'Pediatría - Triple LED' },
-  { src: '/images/congreso-angeles-screen.jpg', label: 'Congreso Ángeles' },
-  { src: '/images/expo-hall-stands.jpg', label: 'Expo Médica' },
-  { src: '/images/congreso-audience-breakfast.jpg', label: 'Congreso con Desayuno' },
-  { src: '/images/stand-fotofinder.jpg', label: 'Stand FotoFinder' },
-  { src: '/images/conference-room-blue.jpg', label: 'Conferencia Ejecutiva' },
+  { src: '/images/congreso-audience-full.webp', label: 'Congreso con +500 asistentes' },
+  { src: '/images/congreso-dermatologia-stage.webp', label: 'Escenario Dermatología' },
+  { src: '/images/stage-led-pediatric.webp', label: 'Pediatría - Triple LED' },
+  { src: '/images/congreso-angeles-screen.webp', label: 'Congreso Ángeles' },
+  { src: '/images/expo-hall-stands.webp', label: 'Expo Médica' },
+  { src: '/images/congreso-audience-breakfast.webp', label: 'Congreso con Desayuno' },
+  { src: '/images/stand-fotofinder.webp', label: 'Stand FotoFinder' },
+  { src: '/images/conference-room-blue.webp', label: 'Conferencia Ejecutiva' },
 ];
 
 export default function CongresosMedicosPage() {

@@ -10,29 +10,29 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
 const showcaseImages = [
-  { src: '/images/gala-led-screens.jpg', label: 'Galas con Pantallas LED' },
-  { src: '/images/congreso-audience-full.jpg', label: 'Congresos Médicos' },
-  { src: '/images/banquet-gala-gold.jpg', label: 'Banquetes de Gala' },
-  { src: '/images/expo-hall-stands.jpg', label: 'Exposiciones Médicas' },
-  { src: '/images/gala-show-lights.jpg', label: 'Shows con Iluminación' },
-  { src: '/images/venue-night-pool.jpg', label: 'Venues Premium' },
-  { src: '/images/instalacion-led-art.jpg', label: 'Instalaciones LED' },
-  { src: '/images/catering-canapes.jpg', label: 'Catering Premium' },
-  { src: '/images/congreso-dermatologia-stage.jpg', label: 'Escenarios Médicos' },
-  { src: '/images/evento-outdoor-people.jpg', label: 'Eventos al Aire Libre' },
+  { src: '/images/gala-led-screens.webp', label: 'Galas con Pantallas LED' },
+  { src: '/images/congreso-audience-full.webp', label: 'Congresos Médicos' },
+  { src: '/images/banquet-gala-gold.webp', label: 'Banquetes de Gala' },
+  { src: '/images/expo-hall-stands.webp', label: 'Exposiciones Médicas' },
+  { src: '/images/gala-show-lights.webp', label: 'Shows con Iluminación' },
+  { src: '/images/venue-night-pool.webp', label: 'Venues Premium' },
+  { src: '/images/instalacion-led-art.webp', label: 'Instalaciones LED' },
+  { src: '/images/catering-canapes.webp', label: 'Catering Premium' },
+  { src: '/images/congreso-dermatologia-stage.webp', label: 'Escenarios Médicos' },
+  { src: '/images/evento-outdoor-people.webp', label: 'Eventos al Aire Libre' },
 ];
 
 const showcaseImagesEN = [
-  { src: '/images/gala-led-screens.jpg', label: 'LED Screen Galas' },
-  { src: '/images/congreso-audience-full.jpg', label: 'Medical Congresses' },
-  { src: '/images/banquet-gala-gold.jpg', label: 'Gala Banquets' },
-  { src: '/images/expo-hall-stands.jpg', label: 'Medical Exhibitions' },
-  { src: '/images/gala-show-lights.jpg', label: 'Light Shows' },
-  { src: '/images/venue-night-pool.jpg', label: 'Premium Venues' },
-  { src: '/images/instalacion-led-art.jpg', label: 'LED Installations' },
-  { src: '/images/catering-canapes.jpg', label: 'Premium Catering' },
-  { src: '/images/congreso-dermatologia-stage.jpg', label: 'Medical Stages' },
-  { src: '/images/evento-outdoor-people.jpg', label: 'Outdoor Events' },
+  { src: '/images/gala-led-screens.webp', label: 'LED Screen Galas' },
+  { src: '/images/congreso-audience-full.webp', label: 'Medical Congresses' },
+  { src: '/images/banquet-gala-gold.webp', label: 'Gala Banquets' },
+  { src: '/images/expo-hall-stands.webp', label: 'Medical Exhibitions' },
+  { src: '/images/gala-show-lights.webp', label: 'Light Shows' },
+  { src: '/images/venue-night-pool.webp', label: 'Premium Venues' },
+  { src: '/images/instalacion-led-art.webp', label: 'LED Installations' },
+  { src: '/images/catering-canapes.webp', label: 'Premium Catering' },
+  { src: '/images/congreso-dermatologia-stage.webp', label: 'Medical Stages' },
+  { src: '/images/evento-outdoor-people.webp', label: 'Outdoor Events' },
 ];
 
 export default function ImageShowcase() {

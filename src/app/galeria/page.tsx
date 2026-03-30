@@ -16,7 +16,7 @@ const WHATSAPP_NUMBER = '5215510703056';
 
 const galleryItems = [
   {
-    src: '/images/gala-led-screens.jpg',
+    src: '/images/gala-led-screens.webp',
     titleEs: 'Gala con Pantallas LED',
     titleEn: 'LED Screen Gala',
     descEs: 'Producción integral con pantallas LED gigantes P2.5 y escenografía personalizada',
@@ -25,7 +25,7 @@ const galleryItems = [
     category: 'corporativos',
   },
   {
-    src: '/images/congreso-audience-full.jpg',
+    src: '/images/congreso-audience-full.webp',
     titleEs: 'Congreso Médico Nacional',
     titleEn: 'National Medical Congress',
     descEs: 'Congreso con +500 asistentes, audio profesional y producción en vivo',
@@ -34,7 +34,7 @@ const galleryItems = [
     category: 'congresos',
   },
   {
-    src: '/images/banquet-gala-gold.jpg',
+    src: '/images/banquet-gala-gold.webp',
     titleEs: 'Banquete de Gala Premium',
     titleEn: 'Premium Gala Banquet',
     descEs: 'Montaje elegante con sillas Tiffany doradas, iluminación premium y centros de mesa',
@@ -43,7 +43,7 @@ const galleryItems = [
     category: 'corporativos',
   },
   {
-    src: '/images/congreso-dermatologia-stage.jpg',
+    src: '/images/congreso-dermatologia-stage.webp',
     titleEs: 'Congreso de Dermatología',
     titleEn: 'Dermatology Congress',
     descEs: 'Escenario con pantalla LED y producción audiovisual para el Colegio Mexicano de Dermatología',
@@ -52,7 +52,7 @@ const galleryItems = [
     category: 'congresos',
   },
   {
-    src: '/images/expo-hall-stands.jpg',
+    src: '/images/expo-hall-stands.webp',
     titleEs: 'Expo Médica con Stands',
     titleEn: 'Medical Expo with Booths',
     descEs: 'Área de exposición con stands farmacéuticos y médicos de alto nivel',
@@ -61,7 +61,7 @@ const galleryItems = [
     category: 'congresos',
   },
   {
-    src: '/images/gala-show-lights.jpg',
+    src: '/images/gala-show-lights.webp',
     titleEs: 'Show con Iluminación Profesional',
     titleEn: 'Professional Lighting Show',
     descEs: 'Producción de show con iluminación robótica, pantallas y efectos especiales',
@@ -70,7 +70,7 @@ const galleryItems = [
     category: 'corporativos',
   },
   {
-    src: '/images/stage-led-pediatric.jpg',
+    src: '/images/stage-led-pediatric.webp',
     titleEs: 'Congreso Pediatría - Escenario LED',
     titleEn: 'Pediatric Congress - LED Stage',
     descEs: 'Escenario con triple pantalla LED, escenografía personalizada y pista de baile iluminada',
@@ -79,7 +79,7 @@ const galleryItems = [
     category: 'congresos',
   },
   {
-    src: '/images/instalacion-led-art.jpg',
+    src: '/images/instalacion-led-art.webp',
     titleEs: 'Instalación LED Artística',
     titleEn: 'Artistic LED Installation',
     descEs: 'Instalación LED interactiva de diseño para evento corporativo exclusivo',
@@ -88,7 +88,7 @@ const galleryItems = [
     category: 'tecnologia',
   },
   {
-    src: '/images/venue-night-pool.jpg',
+    src: '/images/venue-night-pool.webp',
     titleEs: 'Venue Nocturno Premium',
     titleEn: 'Premium Night Venue',
     descEs: 'Producción en venue de lujo con iluminación arquitectónica y ambientación especial',
@@ -97,7 +97,7 @@ const galleryItems = [
     category: 'corporativos',
   },
   {
-    src: '/images/catering-canapes.jpg',
+    src: '/images/catering-canapes.webp',
     titleEs: 'Catering Gourmet',
     titleEn: 'Gourmet Catering',
     descEs: 'Canapés gourmet premium para evento corporativo de alto nivel',
@@ -106,7 +106,7 @@ const galleryItems = [
     category: 'corporativos',
   },
   {
-    src: '/images/catering-charcuterie.jpg',
+    src: '/images/catering-charcuterie.webp',
     titleEs: 'Tablas de Charcutería Premium',
     titleEn: 'Premium Charcuterie Boards',
     descEs: 'Tablas gourmet con vinos premium para eventos exclusivos',
@@ -115,7 +115,7 @@ const galleryItems = [
     category: 'corporativos',
   },
   {
-    src: '/images/congreso-audience-breakfast.jpg',
+    src: '/images/congreso-audience-breakfast.webp',
     titleEs: 'Congreso con Desayuno Ejecutivo',
     titleEn: 'Congress with Executive Breakfast',
     descEs: 'Congreso médico con servicio de desayuno para +300 asistentes',
@@ -124,7 +124,7 @@ const galleryItems = [
     category: 'congresos',
   },
   {
-    src: '/images/conference-room-blue.jpg',
+    src: '/images/conference-room-blue.webp',
     titleEs: 'Conferencia Ejecutiva',
     titleEn: 'Executive Conference',
     descEs: 'Sala de conferencias con producción audiovisual y audio profesional',
@@ -133,7 +133,7 @@ const galleryItems = [
     category: 'corporativos',
   },
   {
-    src: '/images/stand-fotofinder.jpg',
+    src: '/images/stand-fotofinder.webp',
     titleEs: 'Stand FotoFinder - Expo Médica',
     titleEn: 'FotoFinder Stand - Medical Expo',
     descEs: 'Stand personalizado para marca internacional en congreso dermatológico',
@@ -142,7 +142,7 @@ const galleryItems = [
     category: 'congresos',
   },
   {
-    src: '/images/evento-outdoor-people.jpg',
+    src: '/images/evento-outdoor-people.webp',
     titleEs: 'Evento al Aire Libre',
     titleEn: 'Outdoor Event',
     descEs: 'Producción de evento social al aire libre con iluminación y sonido',
@@ -151,7 +151,7 @@ const galleryItems = [
     category: 'corporativos',
   },
   {
-    src: '/images/congreso-angeles-screen.jpg',
+    src: '/images/congreso-angeles-screen.webp',
     titleEs: 'Congreso Ángeles - Pantalla Gigante',
     titleEn: 'Angeles Congress - Giant Screen',
     descEs: 'Pantalla LED gigante con truss profesional para congreso hospitalario',

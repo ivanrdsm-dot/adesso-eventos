@@ -9,12 +9,12 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 const serviceImages: Record<string, string> = {
-  production: '/images/gala-show-lights.jpg',
-  congress: '/images/congreso-audience-full.jpg',
-  tech: '/images/stand-fotofinder.jpg',
-  banquet: '/images/banquet-gala-gold.jpg',
-  design: '/images/stage-led-pediatric.jpg',
-  corporate: '/images/gala-led-screens.jpg',
+  production: '/images/gala-show-lights.webp',
+  congress: '/images/congreso-audience-full.webp',
+  tech: '/images/stand-fotofinder.webp',
+  banquet: '/images/banquet-gala-gold.webp',
+  design: '/images/stage-led-pediatric.webp',
+  corporate: '/images/gala-led-screens.webp',
 };
 
 export default function ServicesPreview() {

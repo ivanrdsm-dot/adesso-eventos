@@ -176,16 +176,16 @@ export default function NosotrosPage() {
           }}
         >
           {[
-            '/images/gala-led-screens.jpg',
-            '/images/congreso-audience-full.jpg',
-            '/images/banquet-gala-gold.jpg',
-            '/images/expo-hall-stands.jpg',
-            '/images/gala-show-lights.jpg',
-            '/images/venue-night-pool.jpg',
-            '/images/catering-canapes.jpg',
-            '/images/stage-led-pediatric.jpg',
-            '/images/congreso-dermatologia-stage.jpg',
-            '/images/evento-outdoor-people.jpg',
+            '/images/gala-led-screens.webp',
+            '/images/congreso-audience-full.webp',
+            '/images/banquet-gala-gold.webp',
+            '/images/expo-hall-stands.webp',
+            '/images/gala-show-lights.webp',
+            '/images/venue-night-pool.webp',
+            '/images/catering-canapes.webp',
+            '/images/stage-led-pediatric.webp',
+            '/images/congreso-dermatologia-stage.webp',
+            '/images/evento-outdoor-people.webp',
           ].map((src, i) => (
             <SwiperSlide key={i}>
               <div className="relative h-[200px] rounded-xl overflow-hidden">

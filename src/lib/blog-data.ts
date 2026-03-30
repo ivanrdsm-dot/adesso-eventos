@@ -20,7 +20,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'tendencias-congresos-medicos-2025',
-    image: '/images/congreso-audience-full.jpg',
+    image: '/images/congreso-audience-full.webp',
     categoryEs: 'Congresos Médicos',
     categoryEn: 'Medical Congresses',
     dateEs: '15 Marzo 2025',
@@ -138,7 +138,7 @@ The future of medical congresses in Mexico is bright. The combination of advance
   },
   {
     slug: 'tecnologia-rfid-futuro-control-acceso',
-    image: '/images/stand-fotofinder.jpg',
+    image: '/images/stand-fotofinder.webp',
     categoryEs: 'Tecnología',
     categoryEn: 'Technology',
     dateEs: '10 Marzo 2025',
@@ -248,7 +248,7 @@ NFC (Near Field Communication) technology adds an additional layer of functional
   },
   {
     slug: 'como-planificar-evento-corporativo-exitoso',
-    image: '/images/gala-led-screens.jpg',
+    image: '/images/gala-led-screens.webp',
     categoryEs: 'Eventos Corporativos',
     categoryEn: 'Corporate Events',
     dateEs: '5 Marzo 2025',
@@ -380,7 +380,7 @@ Day-of coordination and post-event deliverables including edited audiovisual mat
   },
   {
     slug: 'pantallas-led-eventos-guia-completa',
-    image: '/images/stage-led-pediatric.jpg',
+    image: '/images/stage-led-pediatric.webp',
     categoryEs: 'Producción',
     categoryEn: 'Production',
     dateEs: '28 Febrero 2025',
@@ -479,7 +479,7 @@ At ADESSO we have our own P2.5 and P3.9 screen inventory, allowing competitive p
   },
   {
     slug: 'banquetes-corporativos-guia-catering',
-    image: '/images/banquet-gala-gold.jpg',
+    image: '/images/banquet-gala-gold.webp',
     categoryEs: 'Banquetes',
     categoryEn: 'Catering',
     dateEs: '20 Febrero 2025',
@@ -573,7 +573,7 @@ At ADESSO we coordinate banquet services as an integral part of event production
   },
   {
     slug: 'produccion-eventos-hibridos-guia',
-    image: '/images/conference-room-blue.jpg',
+    image: '/images/conference-room-blue.webp',
     categoryEs: 'Eventos Híbridos',
     categoryEn: 'Hybrid Events',
     dateEs: '15 Febrero 2025',

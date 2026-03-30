@@ -8,12 +8,15 @@ import { useState, useEffect, useCallback } from 'react';
 
 const WHATSAPP_NUMBER = '5215510703056';
 
+// Set to a video path when uploaded, e.g. '/videos/reel.mp4'
+const HERO_VIDEO: string | null = null;
+
 const heroImages = [
-  '/images/gala-led-screens.jpg',
-  '/images/congreso-audience-full.jpg',
-  '/images/gala-show-lights.jpg',
-  '/images/stage-led-pediatric.jpg',
-  '/images/congreso-angeles-screen.jpg',
+  '/images/gala-led-screens.webp',
+  '/images/congreso-audience-full.webp',
+  '/images/gala-show-lights.webp',
+  '/images/stage-led-pediatric.webp',
+  '/images/congreso-angeles-screen.webp',
 ];
 
 export default function HeroSection() {
@@ -36,26 +39,40 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image Slideshow */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: 'easeInOut' }}
-          className="absolute inset-0"
-        >
-          <Image
-            src={heroImages[currentSlide]}
-            alt="ADESSO Eventos"
-            fill
-            className="object-cover"
-            priority={currentSlide === 0}
-            sizes="100vw"
-          />
-        </motion.div>
-      </AnimatePresence>
+      {/* Background: Video or Image Slideshow */}
+      {HERO_VIDEO ? (
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src={HERO_VIDEO} type="video/mp4" />
+          </video>
+        </div>
+      ) : (
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroImages[currentSlide]}
+              alt="ADESSO Eventos"
+              fill
+              className="object-cover"
+              priority={currentSlide === 0}
+              sizes="100vw"
+            />
+          </motion.div>
+        </AnimatePresence>
+      )}
 
       {/* Dark gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90 z-[1]" />

@@ -10,6 +10,7 @@ import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
 import ImageShowcase from '@/components/home/ImageShowcase';
 import ParallaxBanner from '@/components/home/ParallaxBanner';
+import UpcomingEvents from '@/components/home/UpcomingEvents';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <ServicesPreview />
       <ParallaxBanner />
       <TechSection />
+      <UpcomingEvents />
       <CoverageSection />
       <TestimonialsSection />
       <CTASection />

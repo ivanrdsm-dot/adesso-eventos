@@ -15,14 +15,31 @@ export default function ContactoPage() {
     name: '', email: '', phone: '', eventType: '', guests: '', message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const msg = locale === 'es'
-      ? `Hola, soy ${formState.name}. Me interesa información sobre ${formState.eventType || 'un evento'}. ${formState.message}`
-      : `Hello, I'm ${formState.name}. I'm interested in ${formState.eventType || 'an event'}. ${formState.message}`;
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formState),
+      });
+
+      if (res.ok) {
+        setIsSuccess(true);
+        setFormState({ name: '', email: '', phone: '', eventType: '', guests: '', message: '' });
+      } else {
+        setError(locale === 'es' ? 'Error al enviar. Intenta por WhatsApp.' : 'Error sending. Try WhatsApp.');
+      }
+    } catch {
+      setError(locale === 'es' ? 'Error de conexión. Intenta por WhatsApp.' : 'Connection error. Try WhatsApp.');
+    }
+
     setIsSubmitting(false);
   };
 
@@ -114,16 +131,40 @@ export default function ContactoPage() {
                     />
                   </div>
 
-                  <motion.button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-gold-dark to-gold text-black font-bold text-lg hover:shadow-2xl hover:shadow-gold/25 transition-all duration-300 disabled:opacity-50"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Send className="w-5 h-5" />
-                    {isSubmitting ? t.contact.form.sending : t.contact.form.submit}
-                  </motion.button>
+                  {isSuccess ? (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="text-center py-6 px-4 rounded-xl bg-teal/10 border border-teal/30"
+                    >
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-teal/20 flex items-center justify-center">
+                        <svg className="w-8 h-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                      </div>
+                      <h4 className="text-white font-bold text-lg mb-2">{locale === 'es' ? '¡Solicitud Enviada!' : 'Request Sent!'}</h4>
+                      <p className="text-white/60 text-sm">{locale === 'es' ? 'Te contactaremos en menos de 24 horas.' : 'We will contact you within 24 hours.'}</p>
+                      <button onClick={() => setIsSuccess(false)} className="mt-4 text-teal text-sm hover:underline">
+                        {locale === 'es' ? 'Enviar otra solicitud' : 'Send another request'}
+                      </button>
+                    </motion.div>
+                  ) : (
+                    <>
+                      {error && (
+                        <div className="text-red-400 text-sm text-center py-2 px-4 rounded-lg bg-red-500/10 border border-red-500/20">
+                          {error}
+                        </div>
+                      )}
+                      <motion.button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-gold-dark to-gold text-black font-bold text-lg hover:shadow-2xl hover:shadow-gold/25 transition-all duration-300 disabled:opacity-50"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <Send className="w-5 h-5" />
+                        {isSubmitting ? t.contact.form.sending : t.contact.form.submit}
+                      </motion.button>
+                    </>
+                  )}
                 </div>
               </form>
             </FadeInLeft>

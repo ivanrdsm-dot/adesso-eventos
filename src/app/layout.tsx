@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     description: "Líderes en producción de congresos médicos, convenciones corporativas y eventos empresariales. Tecnología de vanguardia, pantallas LED, RFID y producción integral.",
     images: [
       {
-        url: "/images/gala-led-screens.jpg",
+        url: "/images/gala-led-screens.webp",
         width: 1200,
         height: 630,
         alt: "ADESSO Eventos - Producción de Congresos Médicos",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ADESSO Eventos | Producción de Congresos Médicos y Eventos Corporativos",
     description: "+35 años produciendo congresos médicos y eventos corporativos de clase mundial en México.",
-    images: ["/images/gala-led-screens.jpg"],
+    images: ["/images/gala-led-screens.webp"],
   },
   alternates: {
     canonical: "https://adesso-eventos.vercel.app",

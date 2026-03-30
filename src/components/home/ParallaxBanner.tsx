@@ -21,7 +21,7 @@ export default function ParallaxBanner() {
     <section ref={ref} className="relative h-[500px] md:h-[600px] overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0 scale-125">
         <Image
-          src="/images/congreso-angeles-screen.jpg"
+          src="/images/congreso-angeles-screen.webp"
           alt="Congreso ADESSO"
           fill
           className="object-cover"
