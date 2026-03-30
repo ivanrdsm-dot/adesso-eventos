@@ -15,7 +15,7 @@ export default function PageHero({ title, highlight, subtitle, metrics }: Props)
       <div className="absolute inset-0 gradient-bg" />
       <div className="absolute inset-0 noise-overlay" />
       <div className="absolute top-1/3 left-10 w-72 h-72 rounded-full bg-gold/5 blur-[120px]" />
-      <div className="absolute bottom-1/4 right-10 w-96 h-96 rounded-full bg-teal/5 blur-[120px]" />
+      <div className="absolute bottom-1/4 right-10 w-96 h-96 rounded-full bg-gold/5 blur-[120px]" />
 
       {/* Grid pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{

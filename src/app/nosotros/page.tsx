@@ -120,8 +120,8 @@ export default function NosotrosPage() {
             </FadeInLeft>
             <FadeInRight>
               <motion.div className="glass rounded-3xl p-8 h-full card-hover" whileHover={{ scale: 1.02 }}>
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-teal/20 to-teal/5 flex items-center justify-center mb-6">
-                  <Eye className="w-7 h-7 text-teal" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center mb-6">
+                  <Eye className="w-7 h-7 text-gold" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">{t.about.vision}</h3>
                 <p className="text-white/60 leading-relaxed">{t.about.visionText}</p>

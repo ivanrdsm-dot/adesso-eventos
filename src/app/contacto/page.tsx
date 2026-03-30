@@ -135,14 +135,14 @@ export default function ContactoPage() {
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="text-center py-6 px-4 rounded-xl bg-teal/10 border border-teal/30"
+                      className="text-center py-6 px-4 rounded-xl bg-gold/10 border border-gold/30"
                     >
-                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-teal/20 flex items-center justify-center">
-                        <svg className="w-8 h-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/20 flex items-center justify-center">
+                        <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                       </div>
                       <h4 className="text-white font-bold text-lg mb-2">{locale === 'es' ? '¡Solicitud Enviada!' : 'Request Sent!'}</h4>
                       <p className="text-white/60 text-sm">{locale === 'es' ? 'Te contactaremos en menos de 24 horas.' : 'We will contact you within 24 hours.'}</p>
-                      <button onClick={() => setIsSuccess(false)} className="mt-4 text-teal text-sm hover:underline">
+                      <button onClick={() => setIsSuccess(false)} className="mt-4 text-gold text-sm hover:underline">
                         {locale === 'es' ? 'Enviar otra solicitud' : 'Send another request'}
                       </button>
                     </motion.div>
@@ -211,8 +211,8 @@ export default function ContactoPage() {
                 {/* Email Card */}
                 <motion.div className="glass rounded-2xl p-6 card-hover">
                   <div className="flex items-center gap-5 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-teal/10 flex items-center justify-center shrink-0">
-                      <Mail className="w-7 h-7 text-teal" />
+                    <div className="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center shrink-0">
+                      <Mail className="w-7 h-7 text-gold" />
                     </div>
                     <div>
                       <h4 className="text-white font-bold mb-1">{locale === 'es' ? 'Correo Electrónico' : 'Email'}</h4>
@@ -220,9 +220,9 @@ export default function ContactoPage() {
                     </div>
                   </div>
                   <div className="space-y-2 ml-[74px]">
-                    <a href="mailto:asoto@adessomexico.com" className="block text-teal hover:text-teal-dark transition-colors text-sm">asoto@adessomexico.com</a>
-                    <a href="mailto:mherrero@adessomexico.com" className="block text-teal hover:text-teal-dark transition-colors text-sm">mherrero@adessomexico.com</a>
-                    <a href="mailto:jlescutia@adessomexico.com" className="block text-teal hover:text-teal-dark transition-colors text-sm">jlescutia@adessomexico.com</a>
+                    <a href="mailto:asoto@adessomexico.com" className="block text-gold hover:text-gold-light transition-colors text-sm">asoto@adessomexico.com</a>
+                    <a href="mailto:mherrero@adessomexico.com" className="block text-gold hover:text-gold-light transition-colors text-sm">mherrero@adessomexico.com</a>
+                    <a href="mailto:jlescutia@adessomexico.com" className="block text-gold hover:text-gold-light transition-colors text-sm">jlescutia@adessomexico.com</a>
                   </div>
                 </motion.div>
 

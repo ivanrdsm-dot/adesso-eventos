@@ -112,7 +112,7 @@ export default function CongresosMedicosPage() {
                     className="glass rounded-2xl p-6 h-full card-hover group relative overflow-hidden"
                     whileHover={{ scale: 1.03 }}
                   >
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold to-teal opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold to-gold-light opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                       <Icon className="w-6 h-6 text-gold" />
                     </div>
@@ -168,7 +168,7 @@ export default function CongresosMedicosPage() {
 
       {/* CTA */}
       <section className="relative py-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-dark to-teal/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-dark to-gold/3" />
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <FadeInUp>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.congresses.ctaTitle}</h2>

@@ -17,8 +17,8 @@ const events = {
       location: 'Monterrey, N.L.',
       attendees: '800+',
       icon: Stethoscope,
-      color: 'from-teal to-teal-dark',
-      borderColor: 'border-teal/20 hover:border-teal/40',
+      color: 'from-gold/80 to-gold-dark',
+      borderColor: 'border-gold/20 hover:border-gold/40',
       tag: 'Congreso Médico',
       status: 'Confirmado',
     },
@@ -39,8 +39,8 @@ const events = {
       location: 'Guadalajara, Jal.',
       attendees: '2,000+',
       icon: Sparkles,
-      color: 'from-accent-blue to-blue-700',
-      borderColor: 'border-accent-blue/20 hover:border-accent-blue/40',
+      color: 'from-gold-light to-gold',
+      borderColor: 'border-gold/20 hover:border-gold/40',
       tag: 'Exposición',
       status: 'En Planeación',
     },
@@ -52,8 +52,8 @@ const events = {
       location: 'Monterrey, N.L.',
       attendees: '800+',
       icon: Stethoscope,
-      color: 'from-teal to-teal-dark',
-      borderColor: 'border-teal/20 hover:border-teal/40',
+      color: 'from-gold/80 to-gold-dark',
+      borderColor: 'border-gold/20 hover:border-gold/40',
       tag: 'Medical Congress',
       status: 'Confirmed',
     },
@@ -74,8 +74,8 @@ const events = {
       location: 'Guadalajara, Jal.',
       attendees: '2,000+',
       icon: Sparkles,
-      color: 'from-accent-blue to-blue-700',
-      borderColor: 'border-accent-blue/20 hover:border-accent-blue/40',
+      color: 'from-gold-light to-gold',
+      borderColor: 'border-gold/20 hover:border-gold/40',
       tag: 'Exhibition',
       status: 'In Planning',
     },
@@ -129,11 +129,11 @@ export default function UpcomingEvents() {
                     <span>{event.date}</span>
                   </div>
                   <div className="flex items-center gap-2 text-white/50">
-                    <MapPin className="w-4 h-4 text-teal shrink-0" />
+                    <MapPin className="w-4 h-4 text-gold shrink-0" />
                     <span>{event.location}</span>
                   </div>
                   <div className="flex items-center gap-2 text-white/50">
-                    <Users className="w-4 h-4 text-accent-blue shrink-0" />
+                    <Users className="w-4 h-4 text-gold shrink-0" />
                     <span>{event.attendees} {locale === 'es' ? 'asistentes' : 'attendees'}</span>
                   </div>
                 </div>

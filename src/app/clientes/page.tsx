@@ -89,7 +89,7 @@ export default function ClientesPage() {
 
       {/* CTA */}
       <section className="relative py-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-dark to-teal/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-dark to-gold/3" />
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <FadeInUp>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
