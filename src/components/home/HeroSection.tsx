@@ -8,8 +8,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 const WHATSAPP_NUMBER = '5215510703056';
 
-// Set to a video path when uploaded, e.g. '/videos/reel.mp4'
-const HERO_VIDEO: string | null = null;
+const HERO_VIDEO: string | null = '/videos/reel.mp4';
 
 const heroImages = [
   '/images/gala-led-screens.webp',
@@ -83,32 +82,34 @@ export default function HeroSection() {
       {/* Gold accent lines */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/40 to-transparent z-[3]" />
 
-      {/* Slide Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full glass flex items-center justify-center text-white/60 hover:text-gold hover:border-gold/40 transition-all duration-300 hover:scale-110"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full glass flex items-center justify-center text-white/60 hover:text-gold hover:border-gold/40 transition-all duration-300 hover:scale-110"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
-
-      {/* Slide Indicators */}
-      <div className="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-        {heroImages.map((_, i) => (
+      {/* Slide Navigation (hidden when video is active) */}
+      {!HERO_VIDEO && (
+        <>
           <button
-            key={i}
-            onClick={() => setCurrentSlide(i)}
-            className={`h-1.5 rounded-full transition-all duration-500 ${
-              i === currentSlide ? 'w-10 bg-gold' : 'w-4 bg-white/30 hover:bg-white/50'
-            }`}
-          />
-        ))}
-      </div>
+            onClick={prevSlide}
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full glass flex items-center justify-center text-white/60 hover:text-gold hover:border-gold/40 transition-all duration-300 hover:scale-110"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full glass flex items-center justify-center text-white/60 hover:text-gold hover:border-gold/40 transition-all duration-300 hover:scale-110"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+          <div className="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            {heroImages.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentSlide(i)}
+                className={`h-1.5 rounded-full transition-all duration-500 ${
+                  i === currentSlide ? 'w-10 bg-gold' : 'w-4 bg-white/30 hover:bg-white/50'
+                }`}
+              />
+            ))}
+          </div>
+        </>
+      )}
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
