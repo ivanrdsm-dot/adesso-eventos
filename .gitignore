@@ -38,6 +38,7 @@ yarn-error.log*
 
 # original images folder
 /IMAGENES
+/logos */
 
 # typescript
 *.tsbuildinfo
