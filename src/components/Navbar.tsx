@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLocale } from '@/lib/locale-context';
 import { Menu, X, Globe } from 'lucide-react';
 
@@ -46,13 +47,24 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center group" aria-label="ADESSO Eventos - Inicio">
             <motion.div
-              className="text-2xl font-bold tracking-wider"
-              whileHover={{ scale: 1.02 }}
+              className="relative"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 300 }}
             >
-              <span className="text-gradient-gold">ADESSO</span>
-              <span className="text-white/60 text-sm font-light ml-2 hidden sm:inline">EVENTOS</span>
+              {/* Glow on hover */}
+              <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/20 blur-xl transition-all duration-500 rounded-full" />
+              <Image
+                src="/adesso-logo-compact.webp"
+                alt="ADESSO Eventos"
+                width={140}
+                height={56}
+                priority
+                className={`relative object-contain transition-all duration-500 ${
+                  isScrolled ? 'h-10 w-auto' : 'h-12 w-auto'
+                }`}
+              />
             </motion.div>
           </Link>
 
@@ -111,6 +123,20 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
           >
+            <motion.div
+              className="absolute top-8"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1 }}
+            >
+              <Image
+                src="/adesso-logo-full.webp"
+                alt="ADESSO Eventos"
+                width={120}
+                height={120}
+                className="w-24 h-auto opacity-90"
+              />
+            </motion.div>
             <div className="flex flex-col items-center gap-6">
               {links.map((link, i) => (
                 <motion.div

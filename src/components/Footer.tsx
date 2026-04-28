@@ -1,9 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLocale } from '@/lib/locale-context';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   const { t } = useLocale();
@@ -19,14 +20,32 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-dark-surface border-t border-white/5">
+    <footer className="relative bg-dark-surface border-t border-gold/10 overflow-hidden">
       <div className="absolute inset-0 noise-overlay" />
+      {/* Decorative gold gradient line at top */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+      {/* Subtle gold glow */}
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-gold/[0.04] blur-[120px] pointer-events-none" />
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-4">
-              <span className="text-3xl font-bold text-gradient-gold tracking-wider">ADESSO</span>
+            <Link href="/" className="inline-block mb-5 group">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+                className="relative"
+              >
+                <div className="absolute inset-0 bg-gold/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <Image
+                  src="/adesso-logo-full.webp"
+                  alt="ADESSO Eventos"
+                  width={200}
+                  height={300}
+                  className="relative h-32 w-auto object-contain"
+                />
+              </motion.div>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
               {t.footer.description}
